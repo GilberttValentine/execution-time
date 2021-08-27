@@ -15,7 +15,7 @@ import java.util.ArrayList;
 class villa {
 
     public static void main(String[] args) {
-        System.out.println(imprimirMatriz(llenarMatrizV(5, 9)));
+        System.out.println(imprimirMatriz(llenarMatrizV(9)));
 
         int[][] matriz = {{4, 8}, {12, 4}};
         System.out.println(imprimirMatriz(cuadradosPerfectos(matriz)));
@@ -23,7 +23,7 @@ class villa {
         String[][] matriz2 = {{"cama", "acma"}, {"oso", "foso"}, {"tela", "late"}};
         System.out.println(comprobarSimilitud(matriz2) + "\n");
 
-        System.out.println(imprimirMatriz(llenarMatrizRombo3(10, 8)));
+        System.out.println(imprimirMatriz(llenarMatrizRombo3(8, 6)));
     }
 
     public static int[][] llenarMatrizV(int x, int y) {
@@ -37,7 +37,20 @@ class villa {
 
         return matriz;
     }
-
+    
+     public static int[][] llenarMatrizV(int x) {
+        int y = (x*2)-1;
+        int[][] matriz = new int[x][y];
+        for (int k = 0; k < x; k++) {
+            for (int i = 0, j=y-1; i<y && i <= k; i++, j--) {
+                matriz[k][i]=1;
+                matriz[k][j]=1;
+            }
+        }
+        
+        return matriz;
+    }
+    
     public static int[][] cuadradosPerfectos(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {

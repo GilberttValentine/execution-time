@@ -26,7 +26,7 @@ public class filo {
             System.out.print("Write number of columns: ");
             columns = scanner.nextInt();
 
-            if (rows % 2 != 0 && columns % 2 != 0) {
+            if ((rows % 2 != 0 && columns % 2 != 0) && columns > rows) {
                 correctDimension = true;
             } else {
                 System.out.println("You must write an not even number for rows and columns");

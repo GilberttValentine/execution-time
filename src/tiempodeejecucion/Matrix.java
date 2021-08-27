@@ -1,33 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tiempodeejecucion;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author Pablo Andres Guzman Rios
+ * @authors 
+ *  Felipe Corredor Castro 
+ *  Pablo Andrés Guzmán Ríos 
+ *  Juan Manuel Villanueva Aristizabal
+ *
  */
-public class pablo {
-
-    public static void main(String[] args) {
-        final int[][] questionThreeOne = fillMatrix(5);
-        System.out.println(printMatrix(questionThreeOne));
-
-        final int[][] questionThreeTwo = {{4, 8}, {12, 4}};
-        System.out.println(printMatrix(perfectSquares(questionThreeTwo)));
-
-        final String[][] questionThreeThree = {{"Cama", "Acma"}, {"Oso", "Roso"}, {"Tela", "Late"}};
-        System.out.println(checkOcurrences(questionThreeThree) + "\n");
-
-        final int[][] questionThreeFour = fillMatrixWithRhombus(9, 7);
-        System.out.println(printMatrix(questionThreeFour));
-    }
-
-    static int[][] fillMatrix(final int rows) {
+public class Matrix {
+    /**
+     * 
+     * @param rows
+     * @return 
+     */
+    public int[][] fillMatrix(final int rows) {
         final int columns = (rows * 2) - 1;
         final int[][] matrix = new int[rows][columns];
 
@@ -40,8 +29,13 @@ public class pablo {
 
         return matrix;
     }
-
-    static int[][] perfectSquares(final int[][] matrix) {
+    
+    /**
+     * 
+     * @param matrix
+     * @return 
+     */
+    public int[][] perfectSquares(final int[][] matrix) {
         for (final int[] matrixObjects : matrix) {
             for (int i = 0; i < matrixObjects.length; i++) {
                 boolean aux = true;
@@ -57,8 +51,13 @@ public class pablo {
 
         return matrix;
     }
-
-    static ArrayList<Integer> checkOcurrences(final String[][] matrix) {
+    
+    /**
+     * 
+     * @param matrix
+     * @return 
+     */
+    public ArrayList<Integer> checkOcurrences(final String[][] matrix) {
         final ArrayList<Integer> ocurrences = new ArrayList<>();
 
         for (int i = 0; i < matrix.length; i++) {
@@ -93,13 +92,20 @@ public class pablo {
 
         return ocurrences;
     }
-
-    static int[][] fillMatrixWithRhombus(final int rows, final int columns) {
+    
+    /**
+     * 
+     * @param rows
+     * @param columns
+     * @return 
+     */
+    public int[][] fillMatrixWithRhombus(final int rows, final int columns) {
         final int[][] matrix = new int[rows][columns];
 
         for (int i = 0, j = rows - 1; i < rows; i++, j--) {
             matrix[i][0] = 1;
             matrix[i][columns - 1] = 1;
+            
             for (int k = 0, l = columns - 1; i + k < (Math.round(columns / 2.0)); k++, l--) {
                 matrix[i][k] = 1;
                 matrix[i][l] = 1;
@@ -110,8 +116,13 @@ public class pablo {
 
         return matrix;
     }
-
-    static StringBuffer printMatrix(final int[][] matrix) {
+    
+    /**
+     * 
+     * @param matrix
+     * @return 
+     */
+    public StringBuffer toString(final int[][] matrix) {
         final StringBuffer toString = new StringBuffer();
 
         for (final int[] rowObjects : matrix) {
