@@ -3,12 +3,14 @@ package tiempodeejecucion;
 import java.util.ArrayList;
 
 public class Matrix {
+    
     /**
      * 
-     * @param rows
      * Get not even row and declares not even columns based on row
      * The iterator type for go and fill matrix row's in a inverse piramid order
      * It fills matrix on columns opposite sides ignoring middle until last row
+     * 
+     * @param rows
      * @return a matrix with inverse piramid form
      */
     public int[][] fillMatrix(final int rows) {
@@ -27,10 +29,11 @@ public class Matrix {
     
     /**
      * 
-     * @param matrix
      * Get a matrix nxn and start validate row by row
      * Get value sqrt([row][value]*increment) and increment grow up until sqrt([row][value]*increment) reach perfect sqrt
      * Fill current value with perfect sqrt
+     * 
+     * @param matrix
      * @return return modify matrix with perfect sqrt values
      */
     public int[][] perfectSquares(final int[][] matrix) {
@@ -52,9 +55,10 @@ public class Matrix {
     
     /**
      * 
-     * @param matrix
      * Compare current [i][j] value with [i][j+1], check if lenght is the same
      * If same lenght and same characters it flows ok
+     * 
+     * @param matrix
      * @return validated positions with characters and lenght
      */
     public ArrayList<Integer> checkOcurrences(final String[][] matrix) {
@@ -95,10 +99,11 @@ public class Matrix {
     
     /**
      * 
-     * @param rows
-     * @param columns
      * Get number rows and columns and start filling first row and last row except middle
      * middle = round(columns/2), so it fills from both matrix extrems in mentionated rows
+     * 
+     * @param rows
+     * @param columns
      * @return matrix with rhombus form
      */
     public int[][] fillMatrixWithRhombus(final int rows, final int columns) {
@@ -121,8 +126,9 @@ public class Matrix {
     
     /**
      * 
-     * @param matrix
      * Get matrix and start to append matrix values to string
+     * 
+     * @param matrix
      * @return a string formed based on initial matrix
      */
     public StringBuffer toString(final int[][] matrix) {
