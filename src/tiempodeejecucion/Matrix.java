@@ -2,19 +2,14 @@ package tiempodeejecucion;
 
 import java.util.ArrayList;
 
-/**
- *
- * @authors 
- *  Felipe Corredor Castro 
- *  Pablo Andrés Guzmán Ríos 
- *  Juan Manuel Villanueva Aristizabal
- *
- */
 public class Matrix {
     /**
      * 
      * @param rows
-     * @return 
+     * Get not even row and declares not even columns based on row
+     * The iterator type for go and fill matrix row's in a inverse piramid order
+     * It fills matrix on columns opposite sides ignoring middle until last row
+     * @return a matrix with inverse piramid form
      */
     public int[][] fillMatrix(final int rows) {
         final int columns = (rows * 2) - 1;
@@ -33,7 +28,10 @@ public class Matrix {
     /**
      * 
      * @param matrix
-     * @return 
+     * Get a matrix nxn and start validate row by row
+     * Get value sqrt([row][value]*increment) and increment grow up until sqrt([row][value]*increment) reach perfect sqrt
+     * Fill current value with perfect sqrt
+     * @return return modify matrix with perfect sqrt values
      */
     public int[][] perfectSquares(final int[][] matrix) {
         for (final int[] matrixObjects : matrix) {
@@ -55,7 +53,9 @@ public class Matrix {
     /**
      * 
      * @param matrix
-     * @return 
+     * Compare current [i][j] value with [i][j+1], check if lenght is the same
+     * If same lenght and same characters it flows ok
+     * @return validated positions with characters and lenght
      */
     public ArrayList<Integer> checkOcurrences(final String[][] matrix) {
         final ArrayList<Integer> ocurrences = new ArrayList<>();
@@ -97,7 +97,9 @@ public class Matrix {
      * 
      * @param rows
      * @param columns
-     * @return 
+     * Get number rows and columns and start filling first row and last row except middle
+     * middle = round(columns/2), so it fills from both matrix extrems in mentionated rows
+     * @return matrix with rhombus form
      */
     public int[][] fillMatrixWithRhombus(final int rows, final int columns) {
         final int[][] matrix = new int[rows][columns];
@@ -120,7 +122,8 @@ public class Matrix {
     /**
      * 
      * @param matrix
-     * @return 
+     * Get matrix and start to append matrix values to string
+     * @return a string formed based on initial matrix
      */
     public StringBuffer toString(final int[][] matrix) {
         final StringBuffer toString = new StringBuffer();
